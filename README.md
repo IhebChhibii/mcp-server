@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Dies ist ein [Next.js](https://nextjs.org) Projekt, das mit [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) gestartet wurde.
 
-## Getting Started
+## Einrichtungshinweise
 
-First, run the development server:
+1. Erstelle ein Konto bei [OpenRouteService](https://openrouteservice.org/).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Gehe zu [https://account.heigit.org/manage/key](https://account.heigit.org/manage/key) und hole dir deinen API-Schlüssel.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Erstelle im Hauptverzeichnis deines Projekts eine `.env`-Datei und füge deinen API_KEY wie folgt hinzu:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```env
+   NEXT_PUBLIC_ORS_API_KEY="dein_api_key"
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Dependencies installieren
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+5. Starte den Server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+6. Falls du Claude Desktop noch nicht hast, lade es [hier](https://claude.ai/download) herunter.
 
-## Deploy on Vercel
+7. Nutze die Dokumentation unter [Model Context Protocol Quickstart](https://modelcontextprotocol.io/quickstart/user), um auf die Claude-Konfigurationsdatei zuzugreifen.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+8. Füge diese Konfiguration in deine Claude-Konfigurationsdatei ein:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```json
+   {
+     "mcpServers": {
+       "mcp-server": {
+         "command": "npx",
+         "args": ["-y", "mcp-remote", "http://localhost:3000/mcp"]
+       }
+     }
+   }
+   ```
+
+9. Probiere nun in Claude Desktop folgenden Prompt aus:
+
+   ```text
+   Hallo, ich möchte eine Klassenfahrt für Jugendliche in Deutschland organisieren: 20 Jugendliche aus Berlin, maximal 4 Stunden Fahrtzeit, Budget 100 € pro Person, Reisedatum ist der 20.08.2025. Bitte gib mir außerdem die aktuelle Temperatur in den passenden Städten.
+   ```
