@@ -5,8 +5,8 @@ import { z } from "zod";
 const handler = createMcpHandler(
   async (server) => {
     server.tool(
-      "Reisevorschläge",
-      "Finden Sie Vorschläge für Klassenfahrten auf Basis von Benutzereingaben.",
+      "Reisevorschlaege",
+      "Finden Sie Vorschlaege fuer Klassenfahrten auf Basis von Benutzereingaben.",
       {
         classSize: z.number().min(1),
         departure: z.string(),
@@ -27,10 +27,10 @@ const handler = createMcpHandler(
               type: "text",
               text:
                 filtered && filtered.length > 0
-                  ? `Ich habe folgende Möglichkeiten gefunden:\n\n${filtered
+                  ? `Ich habe folgende Moeglichkeiten gefunden:\n\n${filtered
                       .map((t) => `• ${t.name} in ${t.city} (€${t.price})`)
                       .join("\n")}`
-                  : "Leider keine passenden Vorschläge gefunden.",
+                  : "Leider keine passenden Vorschlaege gefunden.",
             },
           ],
         };
@@ -38,7 +38,7 @@ const handler = createMcpHandler(
     );
     server.tool(
       "Wettervorhersage",
-      "Holen Sie sich die Wettervorhersage für eine bestimmte Stadt.",
+      "Holen Sie sich die Wettervorhersage fuer eine bestimmte Stadt.",
       {
         city: z.string(),
       },
@@ -50,7 +50,7 @@ const handler = createMcpHandler(
               type: "text",
               text: weatherData
                 ? `Das Wetter in ${city} wird voraussichtlich ${weatherData.summary} mit einer Temperatur von ${weatherData.temperature}°C sein.`
-                : `Entschuldigung, ich konnte das Wetter für ${city} nicht abrufen.`,
+                : `Entschuldigung, ich konnte das Wetter fuer ${city} nicht abrufen.`,
             },
           ],
         };
@@ -59,7 +59,7 @@ const handler = createMcpHandler(
 
     server.prompt(
       "klassenfahrtPlanen",
-      "Hilf Lehrkräften, eine passende Klassenfahrt zu planen und gib auch das Wetter für die Orte an.",
+      "Hilf Lehrkraeften, eine passende Klassenfahrt zu planen und gib auch das Wetter fuer die Orte an.",
       {
         classSize: z.string(),
         departure: z.string(),
@@ -73,7 +73,7 @@ const handler = createMcpHandler(
             role: "user",
             content: {
               type: "text",
-              text: `Hallo, ich möchte eine Klassenfahrt für Jugendliche in Deutschland organisieren: ${classSize} Jugendliche aus ${departure}, maximal ${maxTravelTime} Stunden Fahrtzeit, Budget ${budget} € pro Person, Reisedatum ist der ${date}. Bitte gib mir außerdem die aktuelle Temperatur in den passenden Städten.`,
+              text: `Hallo, ich moechte eine Klassenfahrt fuer Jugendliche in Deutschland organisieren: ${classSize} Jugendliche aus ${departure}, maximal ${maxTravelTime} Stunden Fahrtzeit, Budget ${budget} € pro Person, Reisedatum ist der ${date}. Bitte gib mir außerdem die aktuelle Temperatur in den passenden Staedten.`,
             },
           },
         ],
@@ -84,7 +84,8 @@ const handler = createMcpHandler(
     capabilities: {
       tools: {
         reisevorschlaege: {
-          description: "Erhalten Sie gefilterte Vorschläge für Klassenfahrten",
+          description:
+            "Erhalten Sie gefilterte Vorschlaege fuer Klassenfahrten",
         },
         Wettervorhersage: {
           description: "Holen Sie sich die Wettervorhersage",

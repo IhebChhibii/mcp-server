@@ -58,8 +58,8 @@ export const trips: Trip[] = [
     available: true,
   },
   {
-    name: "Düsseldorf Youth Spot",
-    city: "Düsseldorf",
+    name: "Duesseldorf Youth Spot",
+    city: "Duesseldorf",
     price: 135,
     coordinates: [6.7735, 51.2277],
     available: true,
@@ -128,8 +128,8 @@ export const trips: Trip[] = [
     available: true,
   },
   {
-    name: "Würzburg Hostel",
-    city: "Würzburg",
+    name: "Wuerzburg Hostel",
+    city: "Wuerzburg",
     price: 120,
     coordinates: [9.9312, 49.7913],
     available: true,

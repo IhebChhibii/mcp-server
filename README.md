@@ -4,9 +4,9 @@ Dies ist ein [Next.js](https://nextjs.org) Projekt, das mit [`create-next-app`](
 
 1. Erstelle ein Konto bei [OpenRouteService](https://openrouteservice.org/).
 
-2. Gehe zu [https://account.heigit.org/manage/key](https://account.heigit.org/manage/key) und hole dir deinen API-Schlüssel.
+2. Gehe zu [https://account.heigit.org/manage/key](https://account.heigit.org/manage/key) und hole dir deinen API-Schluessel.
 
-3. Erstelle im Hauptverzeichnis deines Projekts eine `.env`-Datei und füge deinen API_KEY wie folgt hinzu:
+3. Erstelle im Hauptverzeichnis deines Projekts eine `.env`-Datei und fuege deinen API_KEY wie folgt hinzu:
 
    ```env
    NEXT_PUBLIC_ORS_API_KEY="dein_api_key"
@@ -28,7 +28,7 @@ Dies ist ein [Next.js](https://nextjs.org) Projekt, das mit [`create-next-app`](
 
 7. Nutze die Dokumentation unter [Model Context Protocol Quickstart](https://modelcontextprotocol.io/quickstart/user), um auf die Claude-Konfigurationsdatei zuzugreifen.
 
-8. Füge diese Konfiguration in deine Claude-Konfigurationsdatei ein:
+8. Fuege diese Konfiguration in deine Claude-Konfigurationsdatei ein:
 
    ```json
    {
@@ -44,5 +44,5 @@ Dies ist ein [Next.js](https://nextjs.org) Projekt, das mit [`create-next-app`](
 9. Probiere nun in Claude Desktop folgenden Prompt aus:
 
    ```text
-   Hallo, ich möchte eine Klassenfahrt für Jugendliche in Deutschland organisieren: 20 Jugendliche aus Berlin, maximal 4 Stunden Fahrtzeit, Budget 100 € pro Person, Reisedatum ist der 20.08.2025. Bitte gib mir außerdem die aktuelle Temperatur in den passenden Städten.
+   Hallo, ich moechte eine Klassenfahrt fuer Jugendliche in Deutschland organisieren: 20 Jugendliche aus Berlin, maximal 4 Stunden Fahrtzeit, Budget 100 € pro Person, Reisedatum ist der 20.08.2025. Bitte gib mir außerdem die aktuelle Temperatur in den passenden Staedten.
    ```
